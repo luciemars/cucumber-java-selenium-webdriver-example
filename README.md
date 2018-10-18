@@ -26,7 +26,7 @@ $ mvn test
 
 By default tests will run on Chrome, to change that specify `-Dbrowser={browser}` where `{browser}` is either `chrome` or `firefox`
 
-You can also select specific scenarios to execute using `-Dtags="--tags @your_tag"`. More info about tags and how to combine them [here](https://github.com/cucumber/cucumber/tree/master/tag-expressions).
+You can also select specific scenarios to execute using `-Dcucumber.options="--tags @your_tag"`. More info about tags and how to combine them [here](https://github.com/cucumber/cucumber/tree/master/tag-expressions).
 
 ## Hiptest ##
 
