@@ -2,7 +2,6 @@ package com.automatedtest.sample.infrastructure.driver;
 
 import com.automatedtest.sample.basepage.BasePage;
 import cucumber.api.java.Before;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
