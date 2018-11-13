@@ -1,6 +1,5 @@
 package com.automatedtest.sample.infrastructure.driver;
 
-import com.automatedtest.sample.basepage.BasePage;
 import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Setup {
 
     public static WebDriver driver;
-    static BasePage basePage;
 
     @Before
     public void setWebDriver() throws Exception {
@@ -32,7 +30,5 @@ public class Setup {
             default:
                 throw new IllegalArgumentException("Browser \"" + browser + "\" isn't supported.");
         }
-
-        basePage = new BasePage();
     }
 }

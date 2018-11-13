@@ -13,10 +13,6 @@ Feature: Home page
       | com | uid:d980e564-90fb-4d26-9c5e-8e9ed5c50a44 |
 
   @home_page @home_page_title
-  Scenario Outline: Check title (uid:a6af9d86-62e9-4b6c-9daa-0e3e2fbb6aba)
-    Given A user navigates to HomePage "<countryCode>"
-    Then page title is "<title>"
-
-    Examples:
-      | countryCode | title | hiptest-uid |
-      | fr | Google | uid:8800f383-21c1-4daa-a75d-c80cd0ca9b49 |
+  Scenario: Check title (uid:4e9e6380-bffd-482d-9c6f-f4dd7b960398)
+    Given A user navigates to HomePage "fr"
+    Then page title is "Google"
