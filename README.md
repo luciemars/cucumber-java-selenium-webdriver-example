@@ -1,4 +1,4 @@
-# Automated test sample #
+# Automated test example in Java with Cucumber and Selenium WebDriver #
 
 This project is an example of UI automated functional test for Google home page and search using Selenium and Cucumber.
 
