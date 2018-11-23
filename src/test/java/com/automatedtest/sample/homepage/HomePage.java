@@ -15,8 +15,8 @@ public class HomePage extends BasePage{
     @FindBy(css = "#hplogo")
     private WebElement logo;
 
-    @FindBy(css = "#lst-ib")
-    private WebElement searchBar;
+    @FindBy(css = "input[name=q]")
+    private WebElement searchInput;
 
 
     HomePage() {
@@ -39,11 +39,11 @@ public class HomePage extends BasePage{
     }
 
     void checkSearchBarDisplay() {
-        wait.forElementToBeDisplayed(10, this.searchBar, "Search Bar");
+        wait.forElementToBeDisplayed(10, this.searchInput, "Search Bar");
     }
 
     void searchFor(String searchValue) {
-        this.searchBar.sendKeys(searchValue);
-        this.searchBar.sendKeys(Keys.ENTER);
+        this.searchInput.sendKeys(searchValue);
+        this.searchInput.sendKeys(Keys.ENTER);
     }
 }
