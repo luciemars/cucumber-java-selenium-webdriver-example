@@ -4,6 +4,8 @@ This project is an example of UI automated functional test for Google home page 
 
 Test scenarios are described in the feature files located here ./src/test/resources/com/automatedtest/sample.
 
+For more info about this project, read the article ["UI automated test project example with Selenium, Cucumber and Java"](https://medium.com/@lucie.duchemin/ui-automated-test-project-example-with-selenium-cucumber-and-java-b33788bd11c4)
+
 ## Installation ##
 
 You need to have [Java 8 JDK](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html) installed along with [maven](https://maven.apache.org/).
@@ -24,7 +26,7 @@ $ mvn clean install
 $ mvn test
 ```
 
-By default tests will run on Chrome, to change that specify `-Dbrowser={browser}` where `{browser}` is either `chrome` or `firefox`
+By default, tests will run on Chrome. To change that, specify `-Dbrowser={browser}` where `{browser}` is either `chrome` or `firefox`
 
 You can also select specific scenarios to execute using `-Dcucumber.options="--tags @your_tag"`. More info about tags and how to combine them [here](https://github.com/cucumber/cucumber/tree/master/tag-expressions).
 
