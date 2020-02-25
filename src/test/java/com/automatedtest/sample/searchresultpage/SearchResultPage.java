@@ -12,22 +12,22 @@ import java.util.stream.IntStream;
 
 public class SearchResultPage extends BasePage {
 
-    private static final String RESULTS_URL_SELECTOR = "cite";
+    private static final String RESULTS_TITLE_SELECTOR = "a h3";
 
-    @FindBy(css = RESULTS_URL_SELECTOR)
+    @FindBy(css = RESULTS_TITLE_SELECTOR)
     private List<WebElement> results;
 
     SearchResultPage() {
         PageFactory.initElements(driver, this);
     }
 
-    void checkExpectedUrlInResults(String expectedUrl, int nbOfResultsToSearch) {
-        wait.forPresenceOfElements(5, By.cssSelector(RESULTS_URL_SELECTOR), "Result url");
+    void checkExpectedUrlInResults(String expectedTitle, int nbOfResultsToSearch) {
+        wait.forPresenceOfElements(5, By.cssSelector(RESULTS_TITLE_SELECTOR), "Result title");
         Integer indexOfLink = IntStream.range(0, Math.min(this.results.size(), nbOfResultsToSearch))
-                .filter(index -> expectedUrl.equals(this.results.get(index).getText()))
+                .filter(index -> this.results.get(index).getText().contains(expectedTitle))
                 .findFirst()
                 .orElse(-1);
-        Assert.assertTrue("Url " + expectedUrl + " wasn't found in the results.",
+        Assert.assertTrue(expectedTitle + " wasn't found in the results.",
                 !indexOfLink.equals(-1));
     }
 }
