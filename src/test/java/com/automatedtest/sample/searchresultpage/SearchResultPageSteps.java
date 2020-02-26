@@ -1,6 +1,6 @@
 package com.automatedtest.sample.searchresultpage;
 
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Then;
 
 public class SearchResultPageSteps {
 
