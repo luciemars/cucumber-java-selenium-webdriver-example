@@ -32,10 +32,8 @@ public class HomePage extends BasePage{
         wait.forElementToBeDisplayed(5, this.logo, "Logo");
     }
 
-    void checkTitle(String title) {
-        String displayedTitle = driver.getTitle();
-        Assert.assertTrue("Displayed title is " + displayedTitle + " instead of " + title,
-                title.equals(displayedTitle));
+    String getTitle() {
+        return driver.getTitle();
     }
 
     void checkSearchBarDisplay() {

@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Given;
+import org.junit.Assert;
 
 public class HomePageSteps {
 
@@ -31,7 +32,9 @@ public class HomePageSteps {
 
     @Then("^page title is \"([^\"]*)\"$")
     public void pageTitleIs(String title) {
-        this.homePage.checkTitle(title);
+        String displayedTitle = this.homePage.getTitle();
+        Assert.assertTrue("Displayed title is " + displayedTitle + " instead of " + title,
+                title.equals(displayedTitle));
     }
 
     @When("^a user searches for \"([^\"]*)\"$")
