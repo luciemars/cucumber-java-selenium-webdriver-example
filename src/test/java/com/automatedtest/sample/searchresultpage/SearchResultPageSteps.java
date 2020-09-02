@@ -1,6 +1,7 @@
 package com.automatedtest.sample.searchresultpage;
 
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class SearchResultPageSteps {
 
@@ -11,7 +12,8 @@ public class SearchResultPageSteps {
     }
 
     @Then("^\"([^\"]*)\" is displayed in the first \"([^\"]*)\" results$")
-    public void isDisplayedInTheFirstResults(String expectedResultUrl, int nbOfResultsToSearch) {
-        this.searchResultPage.checkExpectedUrlInResults(expectedResultUrl, nbOfResultsToSearch);
+    public void isDisplayedInTheFirstResults(String expectedResult, int nbOfResultsToSearch) {
+        Assert.assertTrue(expectedResult + " wasn't found in the first " + nbOfResultsToSearch + " results.",
+                this.searchResultPage.isInResults(expectedResult, nbOfResultsToSearch));
     }
 }

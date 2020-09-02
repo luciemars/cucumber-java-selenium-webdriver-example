@@ -21,14 +21,10 @@ public class SearchResultPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    void checkExpectedUrlInResults(String expectedTitle, int nbOfResultsToSearch) {
+    boolean isInResults(String expectedTitle, int nbOfResultsToSearch) {
         wait.forPresenceOfElements(5, By.cssSelector(RESULTS_TITLE_SELECTOR), "Result title");
-        Integer indexOfLink = IntStream.range(0, Math.min(this.results.size(), nbOfResultsToSearch))
-                .filter(index -> this.results.get(index).getText().contains(expectedTitle))
-                .findFirst()
-                .orElse(-1);
-        Assert.assertTrue(expectedTitle + " wasn't found in the results.",
-                !indexOfLink.equals(-1));
+        return IntStream.range(0, Math.min(this.results.size(), nbOfResultsToSearch))
+                .anyMatch(index -> this.results.get(index).getText().contains(expectedTitle));
     }
 }
 
